@@ -31,14 +31,14 @@ namespace WebApplication1.Controllers
         public ActionResult<RefreshCaptchaDto> GetRefreshCaptcha()
         {
             string code = GetRandomCode();
-            string fontName = GetRandomFontName();
+            //string fontName = GetRandomFontName();
 
             var captcha = _captchaImageProvider.DrawCaptcha(
                 code,
                 "#808080",
                 "#F5DEB3",
                 24,
-                fontName);
+                "Open Sans");
 
             return Ok(new RefreshCaptchaDto()
             {

@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y \
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
+COPY ["ClassLibrary1/ClassLibrary1.csproj", "ClassLibrary1/"]
 COPY ["WebApplication1/WebApplication1.csproj", "WebApplication1/"]
 RUN dotnet restore "./WebApplication1/WebApplication1.csproj"
 COPY . .

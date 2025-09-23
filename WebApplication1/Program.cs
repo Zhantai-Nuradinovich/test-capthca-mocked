@@ -7,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDNTCaptcha(options =>
 {
+    options.UseCustomFont(Path.Combine(AppContext.BaseDirectory, "Fonts", "OpenSans-Regular.ttf"));
     options.ShowThousandsSeparators(false);
 });
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
